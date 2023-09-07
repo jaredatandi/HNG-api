@@ -5,10 +5,10 @@ import pytz
 app = Flask(__name__)
 
 course = {
-    "Backend": "Backend",
-    "Frontend": "Frontend",
-    "Mobile" : "Mobile",
-    "Marketing": "Marketing"
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "mobile" : "Mobile",
+    "marketing": "Marketing"
 }
 
 def get_accurate_time():
@@ -32,6 +32,19 @@ def get_course():
     utc_time = get_accurate_time()
 
     github_repo = "https://github.com/jaredatandi/HNG-api"
-    github_file = "https://github.com/jaredatandi/HNG-api"
+    github_file = "https://github.com/jaredatandi/HNG-api/blob/master/app.py"
 
+    response = {
+        "slack_name": slack_name,
+        "current_day": current_day,
+        "utc_time": utc_time,
+        "track": course_track,
+        "github_file_url": github_file,
+        "github_repo": github_repo,
+        "status_code": 200
+    }
     
+    return jsonify(response)
+
+if __name__ == '__main__':
+    app.run(debug=True)
