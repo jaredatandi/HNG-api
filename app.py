@@ -5,10 +5,10 @@ import pytz
 app = Flask(__name__)
 
 course = {
-    "backend": "Backend",
-    "frontend": "Frontend",
-    "mobile" : "Mobile",
-    "marketing": "Marketing"
+    "backend": "backend",
+    "frontend": "frontend",
+    "mobile" : "mobile",
+    "marketing": "marketing"
 }
 
 def get_accurate_time():
@@ -40,7 +40,7 @@ def get_course():
         "utc_time": utc_time,
         "track": course_track,
         "github_file_url": github_file,
-        "github_repo": github_repo,
+        "github_repo_url": github_repo,
         "status_code": 200
     }
     
